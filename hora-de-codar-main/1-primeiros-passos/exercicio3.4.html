@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 3.4</title>
+</head>
+<script>
+    var num1 = Number(prompt ("Digite um número:"));
+    var num2 = Number(prompt ("Digite um numero maior que o primeiro:"));
+    
+
+    while(num2 <= num1){
+        num2 = Number(prompt("Digite um numero MAIOR que o primeiro"))
+    }
+    
+    var soma = 0
+    var contador = 0
+
+    for(i = num1; i <= num2; i ++){
+        soma = soma + i
+        contador ++
+    }
+
+    var média = (soma/contador);
+
+    alert("Sua média: " + média )
+</script>
+<body>
+    
+</body>
+</html>
