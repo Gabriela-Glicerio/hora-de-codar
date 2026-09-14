@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Exercicio 2.9 </title>
+</head>
+<script>
+    var DataNasc = Number(prompt("Digite seu ano de nascimento:"));
+    var anoAtual = new Date().getFullYear();
+    
+    var idade = anoAtual - DataNasc
+
+    if(idade < 16){
+        alert(`Idade não permitida para votar!`)
+    }else if (idade >= 16){
+        alert(`Você tem idade para votar!`)
+    }
+</script>
+<body>
+    
+</body>
+</html>

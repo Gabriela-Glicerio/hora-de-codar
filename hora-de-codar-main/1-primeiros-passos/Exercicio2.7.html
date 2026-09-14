@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exercicio 2.5</title>
-
+    <title>Exercicio 2.7 </title>
 </head>
 <script>
+
     var num1 = Number(prompt("Digite um valor:"));
     var num2 = Number(prompt("Digite um valor:"));
     var num3 = Number(prompt("Digite um valor:"));
@@ -14,13 +14,16 @@
     var num5 = Number(prompt("Digite um valor:"));
     var num6 = Number(prompt("Digite um valor:"));
 
-    var resultado = (num1 + num2 + num3 + num4 + num5 + num6 / 6);
+    var soma = 0
 
-    alert (`Seus valores são: ${num1}; ${num2}; ${num3}; ${num4}; ${num5} e ${num6}`)
-    alert (`Sua média é: ${resultado}`)
+    if (num1 < 72) soma += num1;
+    if (num2 < 72) soma += num2;
+    if (num3 < 72) soma += num3;
+    if (num4 < 72) soma += num4;
+    if (num5 < 72) soma += num5;
+    if (num6 < 72) soma += num6;
 
-
-
+    alert(`A sua soma é: ${soma}`)
 
 </script>
 <body>
