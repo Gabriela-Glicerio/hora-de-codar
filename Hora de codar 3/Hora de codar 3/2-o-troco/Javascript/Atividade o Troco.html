@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Troco</title>
+</head>
+<script>
+
+    var nome = prompt("Qual é o seu nome?");
+alert("Olá " + nome + " é um prazer ter você por aqui!");
+
+    var saldo = 1000;
+    var senhaCorreta = 3589;
+    var opcao = 0;
+
+
+    var extrato1 = ("Depósito inicial: R$ 1000");
+    var extrato2 = ("Supermercado: -R$ 150");
+    var extrato3 = ("Nenhum valor recente");
+
+    while (opcao !== 6) {
+
+    opcao = parseInt(prompt("Selecione uma opção:\n1. Saldo\n2. Extrato\n3. Saque\n4. Depósito\n5. Transferência\n6. Sair"));
+
+    if (opcao === 1) {
+        var senha = Number(prompt(nome + ", por favor, informe sua senha:"));
+
+        while (senha !== senhaCorreta) {
+            alert("Senha incorreta! Tente novamente.");
+            senha = Number(prompt(nome + ", por favor, informe sua senha:"));
+        }
+
+        alert("Seu saldo atual é: R$ " + saldo);
+
+    } else if (opcao === 2) {
+        var senha = Number(prompt(nome + ", por favor, informe sua senha:"));
+
+        while (senha !== senhaCorreta) {
+            alert("Senha incorreta! Tente novamente.");
+            senha = Number(prompt(nome + ", por favor, informe sua senha:"));
+        }
+
+        alert(" EXTRATO BANCÁRIO\n" + extrato1 + "\n" + extrato2 + "\n" + extrato3 + "\nSaldo Atual: R$ " + saldo);
+
+    
+    } else if (opcao === 3) {
+        var senha = Number(prompt(nome + ", por favor, informe sua senha:"));
+
+        while (senha !== senhaCorreta) {
+            alert("Senha incorreta! Tente novamente.");
+            senha = Number(prompt(nome + ", por favor, informe sua senha:"));
+        }
+
+        var valorSaque = Number(prompt("Informe o valor do saque:"));
+
+        if (valorSaque <= 0 || valorSaque > saldo) {
+            alert("Operação não autorizada");
+        } else {
+            saldo = saldo - valorSaque;
+            extrato3 = "Saque: -R$ " + valorSaque;
+            alert("Saque realizado com sucesso! Saldo atual: R$ " + saldo);
+        }
+
+    } else if (opcao === 4) {
+        var valorDeposito = Number(prompt("Informe o valor do depósito:"));
+
+        if (valorDeposito <= 0) {
+            alert("Operação não autorizada");
+        } else {
+            saldo = saldo + valorDeposito;
+            extrato3 = "Depósito: +R$ " + valorDeposito;
+            alert("Depósito realizado com sucesso! Saldo atual: R$ " + saldo);
+        }
+
+    } else if (opcao === 5) {
+        var senha = Number(prompt(nome + ", por favor, informe sua senha:"));
+
+        while (senha !== senhaCorreta) {
+            alert("Senha incorreta! Tente novamente.");
+            senha = Number(prompt(nome + ", por favor, informe sua senha:"));
+        }
+
+        var conta = Number(prompt("Informe o número da conta de destino (apenas números):"));
+
+        if (!conta) { 
+            alert("Operação não autorizada");
+        } else {
+            var valorTransferencia = Number(prompt("Informe o valor da transferência:"));
+
+            if (valorTransferencia <= 0 || valorTransferencia > saldo) {
+                alert("Operação não autorizada");
+            } else {
+                saldo = saldo - valorTransferencia;
+                extrato3 = "Transferência para conta " + conta + ": -R$ " + valorTransferencia;
+                alert("Transferência realizada com sucesso! Saldo atual: R$ " + saldo);
+            }
+        }
+
+    } else if (opcao === 6) {
+        alert(nome + ", foi um prazer ter você por aqui!");
+    } else {
+        alert("Por favor, informe um número entre 1 a 6");
+    }
+}
+</script>
+<body>
+    
+</body>
+</html>

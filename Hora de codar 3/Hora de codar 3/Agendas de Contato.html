@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda de Contatos</title>
+</head>
+<body>
+    <script>
+        let agenda = [];
+
+        while (true) {
+            let comando = prompt("Digite um comando (ADICIONAR, BUSCAR, REMOVER, LISTAR, SAIR):");
+
+            if (!comando) break;
+
+            comando = comando.trim().toUpperCase();
+
+            if (comando === "SAIR") {
+                alert(`Agenda encerrada. Total de contatos: ${agenda.length}`);
+                break;
+
+            } else if (comando === "ADICIONAR") {
+                let nome = prompt("Nome:");
+                let telefone = prompt("Telefone:");
+                
+                if (nome && telefone) {
+                    agenda.push({ nome: nome, telefone: telefone });
+                    alert("Contato adicionado!");
+                } else {
+                    alert("Nome e telefone são obrigatórios.");
+                }
+
+            } else if (comando === "BUSCAR") {
+                let nomeBusca = prompt("Nome:");
+                let contato = agenda.find(c => c.nome.toLowerCase() === nomeBusca.toLowerCase());
+
+                if (contato) {
+                    alert(`Telefone: ${contato.telefone}`);
+                } else {
+                    alert("Contato não encontrado");
+                }
+
+            } else if (comando === "REMOVER") {
+                let nomeRemover = prompt("Nome:");
+                let index = agenda.findIndex(c => c.nome.toLowerCase() === nomeRemover.toLowerCase());
+
+                if (index !== -1) {
+                    agenda.splice(index, 1);
+                    alert("Contato removido!");
+                } else {
+                    alert("Contato não encontrado");
+                }
+
+            } else if (comando === "LISTAR") {
+                if (agenda.length === 0) {
+                    alert("Nenhum contato cadastrado.");
+                } else {
+                    let lista = "Contatos cadastrados:\n\n";
+                    agenda.forEach(c => {
+                        lista += `Nome: ${c.nome} - Telefone: ${c.telefone}\n`;
+                    });
+                    alert(lista);
+                }
+
+            } else {
+                alert("Comando inválido! Tente: ADICIONAR, BUSCAR, REMOVER, LISTAR ou SAIR.");
+            }
+        }
+    </script>
+</body>
+</html>

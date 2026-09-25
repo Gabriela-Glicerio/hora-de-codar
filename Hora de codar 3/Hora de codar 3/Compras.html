@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compras</title>
+</head>
+<body>
+    <script>
+        let Frutas = ["Abacaxi", "Acerola", "Banana", "Caju", "Carambola", "Damasco", "Jabuticaba", "Kiwi", "Laranja", "Limão", "Mamão", "Manga", "Maracujá", "Melancia", "Melão", "Pêssego", "uva"];
+
+        alert("Frutas disponíveis:\n\n" + Frutas.join("\n"));
+
+        while (Frutas.length > 0) {
+            let FrutaDigitada = prompt("Digite a fruta que deseja remover (ou 'PARE' para encerrar):");
+
+        
+            if (FrutaDigitada === null) {
+                break;
+            }
+        
+            if (FrutaDigitada.toUpperCase() === "PARE") {
+                alert("Frutas restantes:\n\n" + Frutas.join("\n"));
+                break;
+            }
+
+            if (Frutas.includes(FrutaDigitada)) {
+                let posição = Frutas.indexOf(FrutaDigitada);
+                Frutas.splice(posição, 1);
+                alert("Fruta foi retirada da lista.");
+            } else {
+                alert("Fruta indisponível no nosso mercado.");
+            }
+        }
+
+        if (Frutas.length === 0) {
+            alert("Lista de compras finalizada");
+        }
+    </script>
+</body>
+</html>

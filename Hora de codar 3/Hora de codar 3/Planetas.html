@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planetas</title>
+</head>
+<body>
+    <script>
+        let SistemaSolar = ["Mercúrio", "Vênus", "Terra", "Marte", "Júpiter", "Saturno", "Urano", "Netuno"]
+      
+        let Planetas = prompt(`Digite o nome de um planeta:`)
+
+        if (SistemaSolar.includes(Planetas)) {
+            alert("Planeta encontrado no Sistema Solar")
+        } else if(SistemaSolar.indexOf(Planetas)) {
+            alert ("Planeta não encontrado")
+        }
+
+    </script>
+    
+</body>
+</html>

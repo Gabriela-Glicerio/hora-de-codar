@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Cadastrado Alunos</title>
+</head>
+<body>
+    <script>
+
+      let alunos = [];
+   
+        let opcao = Number(prompt("Selecione uma opção:\n1. Cadastro de Aluno\n2. PARE!"));
+   
+        while (opcao !== 2) {
+
+        if (opcao === 1) {
+        let nome = prompt("Digite o nome do aluno:");
+        alunos.push(nome);
+        alert(`${nome} salvo!`);
+        }
+    
+        opcao = Number(prompt("Selecione uma opção:\n1. Cadastro de Aluno\n2. PARE"));
+        }
+ 
+        alert("Programa encerrado.");
+     
+        alert("Alunos cadastrados:\n" + alunos.join("\n"));
+    </script>
+    
+</body>
+</html>
